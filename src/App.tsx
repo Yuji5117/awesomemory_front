@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Album } from "./types";
+import { Album } from "@/types";
 import axios from "axios";
 
 function App() {
