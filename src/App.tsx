@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import { Album } from "@/types";
 import axios from "axios";
+import { useEffect, useState } from "react";
+
+import { Album } from "@/types";
 
 function App() {
   const [albums, setAlbums] = useState<Album[]>([]);
