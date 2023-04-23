@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     const getAlbums = async () => {
-      const res = await axios.get("http://localhost:3000/albums");
+      const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/albums`);
 
       setAlbums(res.data);
     };
