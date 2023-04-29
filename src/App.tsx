@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <p>再度デプロテスト</p>
+      <p>再度デプロテストを行う</p>
       {/* {albums.map((album) => (
         <div key={album.id}>
           <p>{album.id}</p>
