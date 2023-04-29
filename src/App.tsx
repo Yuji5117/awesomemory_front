@@ -18,12 +18,13 @@ function App() {
 
   return (
     <div className="App">
-      {albums.map((album) => (
+      <p>デプロテスト</p>
+      {/* {albums.map((album) => (
         <div key={album.id}>
           <p>{album.id}</p>
           <p>{album.title}</p>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
