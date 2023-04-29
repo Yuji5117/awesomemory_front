@@ -1,12 +1,5 @@
 name: Deploy
-on:
-  workflow_run:
-    workflows:
-      - "Develop Check"
-    branches:
-      - main
-    types:
-      - completed
+on: push
 
 env:
   project-name: awesomemory_front
