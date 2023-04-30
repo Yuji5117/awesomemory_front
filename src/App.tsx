@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Reset } from "styled-reset";
 
+import { Sidebar } from "./components/Sidebar";
+
 import { Album } from "@/types";
 
 function App() {
@@ -21,7 +23,7 @@ function App() {
     <>
       <Reset />
       <div className="App">
-        <p>Hello</p>
+        <Sidebar />
       </div>
     </>
   );
