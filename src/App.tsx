@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Reset } from "styled-reset";
 
 import { Album } from "@/types";
 
@@ -17,15 +18,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <p>再度デプロテストを行います</p>
-      {/* {albums.map((album) => (
-        <div key={album.id}>
-          <p>{album.id}</p>
-          <p>{album.title}</p>
-        </div>
-      ))} */}
-    </div>
+    <>
+      <Reset />
+      <div className="App">
+        <p>Hello</p>
+      </div>
+    </>
   );
 }
 
