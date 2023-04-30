@@ -34,14 +34,14 @@ const BaseButton = styled.button<BaseButtonProps>`
 `;
 
 const ButtonPrimary = styled(BaseButton)`
-  background: #0a6aff;
-  border: 1px solid#0A6AFF;
+  background: #7C70D4;
+  border: 1px solid#7C70D4;
 `;
 
 const ButtonSecondary = styled(BaseButton)`
   background: transparent;
-  color: #0a6aff;
-  border: 1px solid#0A6AFF;
+  color: #7C70D4;
+  border: 1px solid#7C70D4;
 `;
 
 const buttonStyleLists = {
