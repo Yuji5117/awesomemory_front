@@ -19,4 +19,7 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./src/setup.ts",
   },
+  resolve: {
+    alias: [{ find: "@", replacement: "/src" }],
+  },
 } as VitestConfigExport);
