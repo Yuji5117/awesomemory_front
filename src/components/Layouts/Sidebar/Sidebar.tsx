@@ -1,17 +1,9 @@
-import { SidebarItem } from "./SidebarItem";
+import { SidebarNavigatoin } from "./SidebarNavigation";
 
-export const Sidebar = () => (
-  <div>
-    <ul>
-      <li>
-        <SidebarItem isSelected>Home</SidebarItem>
-      </li>
-      <li>
-        <SidebarItem>Albums</SidebarItem>
-      </li>
-      <li>
-        <SidebarItem>Profile</SidebarItem>
-      </li>
-    </ul>
-  </div>
-);
+export const Sidebar = () => {
+  return (
+    <div>
+      <SidebarNavigatoin />
+    </div>
+  );
+};
