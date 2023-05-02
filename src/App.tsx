@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { Reset } from "styled-reset";
 
 import GlobalStyles from "./lib/styled/global";
-import { theme } from "./lib/styled/them";
+import { theme } from "./lib/styled/theme";
 import { router } from "./routes";
 
 function App() {

@@ -1,5 +1,8 @@
 type Colors = {
-  [key: string]: string;
+  primary: string;
+  danger: string;
+  white: string;
+  gray: string;
 };
 
 export const colors: Colors = {
