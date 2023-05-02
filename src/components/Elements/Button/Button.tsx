@@ -26,7 +26,7 @@ type BaseButtonProps = {
 
 const BaseButton = styled.button<BaseButtonProps>`
   text-align: center;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   border-radius: 5px;
   ${(props) => getSizesStyle(props)}
 
@@ -34,14 +34,14 @@ const BaseButton = styled.button<BaseButtonProps>`
 `;
 
 const ButtonPrimary = styled(BaseButton)`
-  background: #7C70D4;
-  border: 1px solid#7C70D4;
+  background: ${({ theme }) => theme.colors.primary};
+  border: 1px solid ${({ theme }) => theme.colors.primary};
 `;
 
 const ButtonSecondary = styled(BaseButton)`
   background: transparent;
-  color: #7C70D4;
-  border: 1px solid#7C70D4;
+  color: ${({ theme }) => theme.colors.primary};
+  border: 1px solid ${({ theme }) => theme.colors.primary};
 `;
 
 const buttonStyleLists = {

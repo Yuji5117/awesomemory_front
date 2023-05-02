@@ -26,7 +26,8 @@ type TextItemProps = {
 };
 
 const TextItem = styled.p<TextItemProps>`
-  color: ${({ isSelected }) => (isSelected ? "#7C70D4" : "#9D9D9F")};
+  color: ${({ isSelected, theme }) =>
+    isSelected ? theme.colors.primary : theme.colors.gray};
   ${(props) => getSizesfont(props)}
 `;
 
