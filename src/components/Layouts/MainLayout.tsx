@@ -1,13 +1,18 @@
 import { Outlet } from "react-router-dom";
+import styled from "styled-components";
 
 import { ContentLayout } from "./ContentLayout";
 import { Sidebar } from "./Sidebar";
 
 export const MainLayout = () => (
-  <div>
+  <Wrapper>
     <Sidebar />
     <ContentLayout>
       <Outlet />
     </ContentLayout>
-  </div>
+  </Wrapper>
 );
+
+const Wrapper = styled.div`
+  display: flex;
+`;

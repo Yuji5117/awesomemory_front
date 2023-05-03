@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 import { SidebarItem } from "./SidebarItem";
 
@@ -20,11 +21,27 @@ export const SidebarNavigatoin = () => {
 
   return (
     <>
+      <NavTitle>Menu</NavTitle>
       {navigation.map((item) => (
-        <Link to={item.to} key={item.name}>
-          <SidebarItem>{item.name}</SidebarItem>
-        </Link>
+        <Container key={item.name}>
+          <NavLink to={item.to}>
+            {({ isActive }) => (
+              <SidebarItem size="lg" isActive={isActive}>
+                {item.name}
+              </SidebarItem>
+            )}
+          </NavLink>
+        </Container>
       ))}
     </>
   );
 };
+
+const NavTitle = styled.h2`
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.colors.gray};
+`;
+
+const Container = styled.div`
+  padding-top: 25px;
+`;

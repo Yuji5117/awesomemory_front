@@ -15,34 +15,34 @@ const getSizesfont = ({ size = "md" }) => {
 
     default:
       return css`
-        padding: 18px;
+        font-size: 16px;
       `;
   }
 };
 
 type TextItemProps = {
   size: "sm" | "md" | "lg";
-  isSelected: boolean;
+  isActive: boolean;
 };
 
 const TextItem = styled.p<TextItemProps>`
-  color: ${({ isSelected, theme }) =>
-    isSelected ? theme.colors.primary : theme.colors.gray};
+  color: ${({ isActive, theme }) =>
+    isActive ? theme.colors.primary : theme.colors.gray};
   ${(props) => getSizesfont(props)}
 `;
 
 type SidebarItemProps = {
   children: ReactNode;
   size?: "sm" | "md" | "lg";
-  isSelected?: boolean;
+  isActive?: boolean;
 };
 
 export const SidebarItem = ({
   children,
   size = "md",
-  isSelected = false,
+  isActive = false,
 }: SidebarItemProps) => (
-  <TextItem size={size} isSelected={isSelected}>
+  <TextItem size={size} isActive={isActive}>
     {children}
   </TextItem>
 );
