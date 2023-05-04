@@ -2,13 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 
 import { MainLayout } from "@/components/Layouts/MainLayout";
 import { Album, Home, Profile } from "@/pages";
-import { ErrorPage } from "@/pages/ErrorPage";
+import { NotFound } from "@/pages/NotFound";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement: <ErrorPage />,
+    errorElement: <NotFound />,
     children: [
       { index: true, element: <Home /> },
       { path: "/albums", element: <Album /> },
