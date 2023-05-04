@@ -19,6 +19,6 @@ export const SelectedLarge: Story = {
   args: {
     children: "Default",
     size: "lg",
-    isSelected: true,
+    isActive: true,
   },
 };
