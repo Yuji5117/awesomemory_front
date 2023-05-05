@@ -1,37 +1,14 @@
-import { useForm } from "react-hook-form";
-import styled from "styled-components";
+import { ReactNode } from "react";
 
-import { Button } from "@/components/Elements/Button";
-import { InputField } from "@/components/Elements/Form";
+type LayoutProps = {
+  children: ReactNode;
+};
 
-export const Layout = () => {
-  const { register } = useForm();
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
       <h1>ログイン</h1>
-      <LoginForm action="">
-        <div>
-          <div>
-            <InputField
-              label="メールアドレス"
-              type="email"
-              regitration={register("email")}
-            />
-          </div>
-          <div>
-            <InputField
-              label="パスワード"
-              type="password"
-              regitration={register("password")}
-            />
-          </div>
-          <Button styleType="primary">ログイン</Button>
-        </div>
-      </LoginForm>
+      <div>{children}</div>
     </div>
   );
 };
-
-const LoginForm = styled.form`
-  display: flex;
-`;
