@@ -1,13 +1,14 @@
 import { ReactNode } from "react";
 
 type LayoutProps = {
+  title: string;
   children: ReactNode;
 };
 
-export const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ title, children }: LayoutProps) => {
   return (
     <div>
-      <h1>ログイン</h1>
+      <h1>{title}</h1>
       <div>{children}</div>
     </div>
   );

@@ -6,7 +6,7 @@ import { LoginForm } from "@/features/auth/components/LoginForm";
 export const Login = () => {
   const navigate = useNavigate();
   return (
-    <Layout>
+    <Layout title="ログイン">
       <LoginForm onSuccess={() => navigate("/")} />
     </Layout>
   );
