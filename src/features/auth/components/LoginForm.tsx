@@ -1,5 +1,7 @@
 import { DevTool } from "@hookform/devtools";
 
+import { login } from "../api/login";
+
 import { Button } from "@/components/Elements/Button";
 import { InputField } from "@/components/Elements/Form";
 import { Form } from "@/components/Elements/Form/Form";
@@ -9,24 +11,6 @@ type LoginFormProps = {
 };
 
 export const LoginForm = ({ onSuccess }: LoginFormProps) => {
-  const login = (data: { email: string; password: string }) => {
-    let isSuccess = false;
-    const emailFromLocalStorage = localStorage.getItem("email");
-    const passwordFromLocalStorage = localStorage.getItem("password");
-
-    if (data.email !== emailFromLocalStorage) {
-      console.error("Email is wrong");
-      return isSuccess;
-    }
-    if (data.password !== passwordFromLocalStorage) {
-      console.error("Password is wrong");
-      return isSuccess;
-    }
-
-    isSuccess = true;
-
-    return data;
-  };
   return (
     <div>
       <Form
