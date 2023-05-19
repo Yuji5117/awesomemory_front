@@ -3,8 +3,8 @@ import { DevTool } from "@hookform/devtools";
 import { login } from "../api/login";
 
 import { Button } from "@/components/Elements/Button";
-import { InputField } from "@/components/Elements/Form";
-import { Form } from "@/components/Elements/Form/Form";
+import { InputField } from "@/components/Form";
+import { Form } from "@/components/Form/Form";
 
 type LoginFormProps = {
   onSuccess: () => void;
