@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 import { SidebarItem } from "./SidebarItem";
@@ -33,6 +33,11 @@ export const SidebarNavigatoin = () => {
           </NavLink>
         </Container>
       ))}
+      <Container>
+        <NavLink to={"/login"}>
+          <SidebarItem size="lg">Logout</SidebarItem>
+        </NavLink>
+      </Container>
     </>
   );
 };
