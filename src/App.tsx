@@ -1,19 +1,18 @@
 import { RouterProvider } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
 import { Reset } from "styled-reset";
 
 import GlobalStyles from "./lib/styled/global";
-import { theme } from "./lib/styled/theme";
+import { AppProvider } from "./providers/app";
 import { router } from "./routes";
 
 function App() {
   return (
     <>
-      <Reset />
-      <ThemeProvider theme={theme}>
+      <AppProvider>
+        <Reset />
         <GlobalStyles />
         <RouterProvider router={router} />
-      </ThemeProvider>
+      </AppProvider>
     </>
   );
 }

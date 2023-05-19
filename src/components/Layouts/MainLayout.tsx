@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
 import { ContentLayout } from "./ContentLayout";
-import { Sidebar } from "./Sidebar";
+import { Sidebar } from "../Sidebar";
 
 export const MainLayout = () => (
   <Wrapper>
