@@ -2,8 +2,14 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 import { SidebarItem } from "./SidebarItem";
+import { Button } from "../Elements/Button";
 
 export const SidebarNavigatoin = () => {
+  const logout = () => {
+    sessionStorage.removeItem("is-authenticated");
+    console.log("ログアウト");
+  };
+
   const navigation = [
     {
       name: "Home",
@@ -35,7 +41,9 @@ export const SidebarNavigatoin = () => {
       ))}
       <Container>
         <NavLink to={"/login"}>
-          <SidebarItem size="lg">Logout</SidebarItem>
+          <Button size="lg" styleType="primary" onClick={() => logout()}>
+            Logout
+          </Button>
         </NavLink>
       </Container>
     </>
