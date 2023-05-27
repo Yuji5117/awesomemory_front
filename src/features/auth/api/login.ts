@@ -1,18 +1,9 @@
-export const login = (data: { email: string; password: string }) => {
-  let isSuccess = false;
-  const emailFromLocalStorage = localStorage.getItem("email");
-  const passwordFromLocalStorage = localStorage.getItem("password");
+import { apiClient } from "@/lib/axios";
 
-  if (data.email !== emailFromLocalStorage) {
-    console.error("Email is wrong");
-    return isSuccess;
+export const login = async () => {
+  const res = await apiClient.post("/login");
+  if (res.status !== 200) {
+    return false;
   }
-  if (data.password !== passwordFromLocalStorage) {
-    console.error("Password is wrong");
-    return isSuccess;
-  }
-
-  isSuccess = true;
-
-  return data;
+  return true;
 };

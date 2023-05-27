@@ -1,31 +1,25 @@
 import { DevTool } from "@hookform/devtools";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+import { login } from "../api/login";
 
 import { Button } from "@/components/Elements/Button";
 import { Heading } from "@/components/Elements/Heading";
 import { InputField } from "@/components/Form";
 import { Form } from "@/components/Form/Form";
-import { mockAPI } from "@/config";
 
 type LoginFormProps = {
   onSuccess: () => void;
 };
 
 export const LoginForm = ({ onSuccess }: LoginFormProps) => {
-  const login = async (valus: any) => {
-    const res = await axios.post(`${mockAPI}/login`);
-    console.log({ res });
-    console.log({ valus });
-    return true;
-  };
   return (
     <LoginFormWrapper>
       <Heading headingLevel="h1">Log in</Heading>
       <Form
-        onSubmit={async (values) => {
-          const isSuccess = await login(values);
+        onSubmit={async () => {
+          const isSuccess = await login();
           if (isSuccess) {
             onSuccess();
           }
