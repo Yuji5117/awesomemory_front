@@ -18,8 +18,8 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
     <LoginFormWrapper>
       <Heading headingLevel="h1">Log in</Heading>
       <Form
-        onSubmit={async () => {
-          const isSuccess = await login();
+        onSubmit={async (values: any) => {
+          const isSuccess = await login(values);
           if (isSuccess) {
             onSuccess();
           }

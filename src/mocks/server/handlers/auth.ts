@@ -1,10 +1,30 @@
 import { rest } from "msw";
 
-export const authHandlers = [
-  rest.post("/login", (req, res, ctx) => {
-    sessionStorage.setItem("is-authenticated", "true");
+import { db } from "../db";
 
-    return res(ctx.status(200));
+type LoginBody = {
+  email: string;
+  password: string;
+};
+
+export const authHandlers = [
+  rest.post<LoginBody>("/auth/login", (req, res, ctx) => {
+    const credentials = req.body;
+
+    const user = db.user.findFirst({
+      where: {
+        email: {
+          equals: credentials.email,
+        },
+      },
+    });
+
+    if (user?.password === credentials.password) {
+      return res(ctx.status(200), ctx.json({ user }));
+    }
+
+    const error = new Error("Invalid username or password");
+    throw error;
   }),
 
   rest.get("/user", (req, res, ctx) => {
