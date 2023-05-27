@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { ReactNode } from "react";
 import styled, { css } from "styled-components";
 
 const getSizesStyle = ({ size = "md" }) => {
