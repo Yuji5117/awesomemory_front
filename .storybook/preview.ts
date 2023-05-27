@@ -1,23 +1,10 @@
+import { theme } from "../src/lib/styled/theme";
 import type { Preview } from "@storybook/react";
 import { withThemeFromJSXProvider } from "@storybook/addon-styling";
 
-import { createGlobalStyle } from "styled-components";
+import { GlobalStyles } from "../src/lib/styled";
 
-const GlobalStyles = createGlobalStyle`
-  html,
-  body {
-    background: #fff;
-    font-size: 10px;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  a {
-    text-decoration: none;
-  }
-`;
+import { ThemeProvider } from "styled-components";
 
 const preview: Preview = {
   parameters: {
@@ -33,6 +20,11 @@ const preview: Preview = {
 
 export const decorators = [
   withThemeFromJSXProvider({
+    themes: {
+      light: theme,
+    },
+    defaultTheme: "light",
+    Provider: ThemeProvider,
     GlobalStyles,
   }),
 ];
