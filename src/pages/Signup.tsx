@@ -6,7 +6,7 @@ import { SignupForm } from "@/features/auth/components/SignupForm";
 export const Signup = () => {
   const navigate = useNavigate();
   return (
-    <Layout title='サインアップ'>
+    <Layout>
       <SignupForm onSuccess={() => navigate("/")} />
     </Layout>
   );

@@ -1,4 +1,5 @@
 import { DevTool } from "@hookform/devtools";
+import { Link } from "react-router-dom";
 
 import { signup } from "../api/signup";
 
@@ -36,6 +37,9 @@ export const SignupForm = ({ onSuccess }: SignupFormProps) => {
           </>
         )}
       </Form>
+      <div>
+        <Link to="/login/">Log inへ</Link>
+      </div>
     </div>
   );
 };

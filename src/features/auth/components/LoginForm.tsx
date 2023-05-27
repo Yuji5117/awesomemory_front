@@ -1,8 +1,11 @@
 import { DevTool } from "@hookform/devtools";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 import { login } from "../api/login";
 
 import { Button } from "@/components/Elements/Button";
+import { Heading } from "@/components/Elements/Heading";
 import { InputField } from "@/components/Form";
 import { Form } from "@/components/Form/Form";
 
@@ -12,7 +15,8 @@ type LoginFormProps = {
 
 export const LoginForm = ({ onSuccess }: LoginFormProps) => {
   return (
-    <div>
+    <LoginFormWrapper>
+      <Heading headingLevel="h1">Log in</Heading>
       <Form
         onSubmit={async (values) => {
           const isSuccess = await login(values);
@@ -23,21 +27,43 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
       >
         {({ register, control }) => (
           <>
-            <InputField
-              label="メールアドレス"
-              type="email"
-              regitration={register("email", { required: true })}
-            />
-            <InputField
-              label="パスワード"
-              type="password"
-              regitration={register("password", { required: true })}
-            />
-            <Button styleType="primary">ログイン</Button>
+            <InputContainer>
+              <InputField
+                label="メールアドレス"
+                type="email"
+                regitration={register("email", { required: true })}
+              />
+            </InputContainer>
+            <InputContainer>
+              <InputField
+                label="パスワード"
+                type="password"
+                regitration={register("password", { required: true })}
+              />
+            </InputContainer>
+            <ButtonContainer>
+              <Button styleType="primary">ログイン</Button>
+            </ButtonContainer>
             <DevTool control={control} />
           </>
         )}
       </Form>
-    </div>
+      <div>
+        <Link to="/signup/">Sign upへ</Link>
+      </div>
+    </LoginFormWrapper>
   );
 };
+
+const LoginFormWrapper = styled.div`
+  padding: 20px;
+`;
+
+const InputContainer = styled.div`
+  margin-top: 20px;
+`;
+
+const ButtonContainer = styled.div`
+  margin-top: 30px;
+  width: 100%;
+`;
