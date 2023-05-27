@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   html,
   body {
     background: #fff;
@@ -15,5 +15,3 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 `;
-
-export default GlobalStyles;
