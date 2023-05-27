@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 import { Reset } from "styled-reset";
 
-import GlobalStyles from "./lib/styled/global";
+import { GlobalStyles } from "./lib/styled";
 import { AppProvider } from "./providers/app";
 import { router } from "./routes";
 
