@@ -1,6 +1,7 @@
 import react from "@vitejs/plugin-react";
 import type { UserConfig } from "vite";
 import { defineConfig } from "vite";
+import { nodePolyfills } from "vite-plugin-node-polyfills";
 import type { InlineConfig } from "vitest";
 
 interface VitestConfigExport extends UserConfig {
@@ -9,7 +10,12 @@ interface VitestConfigExport extends UserConfig {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    nodePolyfills({
+      protocolImports: true,
+    }),
+  ],
   server: {
     host: "0.0.0.0",
     port: 3080,
