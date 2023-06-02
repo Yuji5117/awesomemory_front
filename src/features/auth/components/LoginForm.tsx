@@ -21,6 +21,7 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
         onSubmit={async (values: any) => {
           const isSuccess = await login(values);
           if (isSuccess) {
+            console.log("browser", isSuccess);
             onSuccess();
           }
         }}

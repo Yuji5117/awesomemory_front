@@ -2,13 +2,15 @@ import { rest } from "msw";
 
 import { db } from "../db";
 
+import { createJwt } from "@/mocks/utils";
+
 type LoginBody = {
   email: string;
   password: string;
 };
 
 export const authHandlers = [
-  rest.post<LoginBody>("/auth/login", (req, res, ctx) => {
+  rest.post<LoginBody>(`/auth/login`, async (req, res, ctx) => {
     const credentials = req.body;
 
     const user = db.user.findFirst({
@@ -19,12 +21,13 @@ export const authHandlers = [
       },
     });
 
-    if (user?.password === credentials.password) {
-      return res(ctx.status(200), ctx.json({ user }));
+    if (user?.password !== credentials.password) {
+      const error = new Error("Invalid username or password");
+      throw error;
     }
 
-    const error = new Error("Invalid username or password");
-    throw error;
+    const encodedToken = await createJwt();
+    return res(ctx.status(200), ctx.json({ user, jwt: encodedToken }));
   }),
 
   rest.get("/user", (req, res, ctx) => {
